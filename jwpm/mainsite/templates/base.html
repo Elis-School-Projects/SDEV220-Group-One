@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - JW Property MGT</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/main.js' %}" defer></script>
+
+    <style>
+        .hero {
+            background-image: url('{% static "imgs/hero.png" %}');
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header__logoContainer">
+            <img src="{% static 'imgs/logo.png' %}" alt="Logo" class="header__logo">
+        </div>
+        <div class="header__menuButtonContainer">
+            <a href="#" class="header__menuButton" onclick="openNavigation()">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="header__hamburger">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>                  
+                Menu
+            </a>
+        </div>
+        <div class="header__popoutNav">
+            <div class="nav__topContainer">
+                <img src="{% static 'imgs/logo.png' %}" alt="Logo" class="nav__logo">
+                <div class="nav__closeButtonContainer">
+                    <a href="#" class="nav__menuButton" onclick="closeNavigation()">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="nav_x">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                        </svg>                      
+                    </a>
+                </div>
+            </div>
+            <ul class="nav__links">
+                <li><a href="{% url 'main' %}" class="nav__link">&rarr; Home</a></li>
+                <li><a href="{% url 'rental_requirements' %}" class="nav__link">&rarr; Rental Requirements</a></li>
+                <li><a href="{% url 'available_units' %}" class="nav__link">&rarr; Available Units</a></li>
+                <li><a href="{% url 'rental_application' %}" class="nav__link">&rarr; Rental Application</a></li>
+                <li><a href="{% url 'contact_us' %}" class="nav__link">&rarr; Contact Us</a></li>
+            </ul>
+        </div>
+    </header>
+
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

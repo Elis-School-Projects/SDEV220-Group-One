@@ -1,26 +1,6 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Available Units - JW Property MGT</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
-<body>
-    <header>
-        <div class="header__logoContainer">
-            <img src="{% static 'imgs/logo.png' %}" alt="Logo" class="header__logo">
-        </div>
-        <nav>
-            <ul>
-                <li><a href="{% url 'main' %}" class="nav__link">Home</a></li>
-                <li><a href="{% url 'rental_requirements' %}" class="nav__link">Rental Requirements</a></li>
-                <li><a href="{% url 'available_units' %}" class="nav__link">Available Units</a></li>
-                <li><a href="{% url 'rental_application' %}" class="nav__link">Rental Application</a></li>
-                <li><a href="{% url 'contact_us' %}" class="nav__link">Contact Us</a></li>
-            </ul>
-        </nav>
-    </header>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="header__background"></div>
+    <h1 class="subpage__title">Available Units</h1>
+{% endblock %}

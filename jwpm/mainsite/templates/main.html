@@ -1,45 +1,6 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - JW Property MGT</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% extends 'base.html' %}
 
-    <style>
-        .hero {
-            background-image: url('{% static "imgs/hero.png" %}');
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <div class="header__logoContainer">
-            <img src="{% static 'imgs/logo.png' %}" alt="Logo" class="header__logo">
-        </div>
-        <div class="header__menuButtonContainer">
-            <button class="header__menuButton">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="header__hamburger">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                </svg>                  
-                Menu
-            </button>
-        </div>
-        <div class="header__mobileNav">
-            <!-- To Be Continued - Eli -->
-        </div>
-        <!-- <nav>
-            <ul>
-                <li><a href="{% url 'main' %}" class="nav__link">Home</a></li>
-                <li><a href="{% url 'rental_requirements' %}" class="nav__link">Rental Requirements</a></li>
-                <li><a href="{% url 'available_units' %}" class="nav__link">Available Units</a></li>
-                <li><a href="{% url 'rental_application' %}" class="nav__link">Rental Application</a></li>
-                <li><a href="{% url 'contact_us' %}" class="nav__link">Contact Us</a></li>
-            </ul>
-        </nav> -->
-    </header>
-
+{% block content %}
     <div class="hero">
         <div class="hero__outerContainer">
             <div class="hero__innerContainer">
@@ -48,5 +9,4 @@
             </div>
         </div>
     </div>
-</body>
-</html>
+{% endblock %}
