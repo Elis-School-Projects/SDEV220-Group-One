@@ -2,5 +2,21 @@
 
 {% block content %}
     <div class="header__background"></div>
-    <h1 class="subpage__title">Available Units</h1>
+    <div class="units__container">
+        <h1 class="subpage__title">Available Units</h1>
+        <div class="units__grid">
+            {% for unit in units %}
+                <div class="unit__container">
+                    <p class="unit__status" data-status="{{ unit.status }}">Status: {{ unit.status }}</p>
+                    <h2 class="unit__address">{{ unit.address }}</h2>
+                    <div class="unit__stats">
+                        <p class="unit__stat">{{ unit.bedrooms }} Bed</p>
+                        <p class="unit__stat">{{ unit.bathrooms }} Bath</p>
+                        <p class="unit__stat">${{ unit.rent }}/month</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        
+    </div>
 {% endblock %}

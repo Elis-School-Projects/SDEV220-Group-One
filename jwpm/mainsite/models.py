@@ -5,7 +5,7 @@ from django.conf import settings
 class Unit(models.Model):
     creator = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     address = models.CharField(max_length=200)
-    status = models.TextField()
+    status = models.CharField(max_length=200)
     bedrooms = models.IntegerField()
     bathrooms = models.FloatField()
     rent = models.IntegerField()
@@ -23,12 +23,12 @@ class Unit(models.Model):
     def __str__(self):
         return self.address
     
-class Unit(models.Model):
+class Application(models.Model):
     name = models.CharField(max_length=200)
-    email = models.TextField()
-    phone = models.TextField()
+    email = models.CharField(max_length=200)
+    phone = models.CharField(max_length=200)
     income = models.IntegerField()
-    applyingFor = models.TextField()
+    applyingFor = models.CharField(max_length=400)
     created_date = models.DateTimeField(default=timezone.now)
 
     def __str__(self):

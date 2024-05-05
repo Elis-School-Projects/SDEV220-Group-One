@@ -279,6 +279,59 @@ header {
     font-size: 1.2rem;
 }
 
+/* Available Units Page */
+.units__container {
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.units__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+}
+
+.unit__container {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+}
+
+.unit__status {
+    text-align: center;
+    padding: .2rem 0;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.unit__address {
+    font-size: 1.2rem;
+    text-align: center;
+    padding: .4rem 0;
+}
+
+.unit__stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding: .3rem 0;
+}
+
+[data-status="Available"] {
+    background-color: #2ecc71;
+}
+
+[data-status="Pending"] {
+    background-color: #f1c40f;
+}
+
+[data-status="No Longer Available"] {
+    background-color: #e74c3c;
+}
+
 /* Footer */
 .footer {
     text-align: center;
@@ -300,6 +353,12 @@ header {
     
     .hero__desc {
         font-size: 1.4rem;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .units__grid {
+        grid-template-columns: 1fr 1fr;
     }
 }
 
@@ -354,7 +413,7 @@ header {
         align-items: center;
     }
 
-    .main__jobsGrid, .flips__grid {
+    .main__jobsGrid, .flips__grid, .units__grid {
         grid-template-columns: 1fr;
     }
 }
