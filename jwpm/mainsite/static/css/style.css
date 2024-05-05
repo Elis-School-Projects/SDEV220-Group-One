@@ -156,10 +156,140 @@ header {
     font-weight: 500;
 }
 
+/* Main Page Content */
+.contentContainer {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.main__tagline {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 800;
+    padding: 5rem 0;
+}
+
+.orange {
+    color: orange
+}
+
+.main__jobsGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+    text-align: center;
+    padding-bottom: 5rem;
+}
+
+.jobsGrid__img {
+    height: 80%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.jobsGrid__title {
+    font-size: 1.1rem;
+    padding-top: .5rem;
+}
+
+.jobsGrid__subtitle {
+    color: #232323;
+}
+
+.flips__title {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 800;
+    padding: 2rem 0;
+}
+
+.blue {
+    color: rgb(43, 155, 211);
+}
+
+.flips__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.flips__label {
+    text-align: center;
+    padding-bottom: .5rem;
+    font-size: 1.7rem;
+}
+
+.flips__img {
+    width: 100%;
+    height: 90%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
 /* Sub-Page Titles */
 .subpage__title {
     text-align: center;
     padding: 1rem 0;
+}
+
+.subpage__desc {
+    color: #232323;
+    text-align: center;
+}
+
+/* Rental Requirements Page */
+.rentalReq__container {
+    max-width: 48rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.rentalReq__line {
+    width: 2rem;
+    height: .25rem;
+    margin-top: 2.5rem;
+    margin-bottom: .25rem;
+    background-color: rgb(252, 150, 78);
+}
+
+.rentalReq__subtitle {
+    margin-bottom: .25rem;
+    font-size: 1.5rem;
+}
+
+.rentalReq__paragraph {
+    color: #232323;
+}
+
+.rentalReq__list {
+    list-style-position: outside;
+    padding: 1rem 1.25rem;
+}
+
+.rentalReq__listItem {
+    padding-bottom: .1rem;
+}
+
+/* Contact Information Page */
+.contactInfo__text {
+    text-align: center;
+    line-height: 2rem;
+    font-size: 1.2rem;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    width: 100%;
+    background-color: rgb(43, 155, 211);
+    padding: 2rem 0;
+    margin-top: 3rem;
+}
+
+.footer__text {
+    color: white;
 }
 
 /* Responsive Design */
@@ -222,5 +352,9 @@ header {
         background-color: rgba(0, 0, 0, 0.5);
         text-align: center;
         align-items: center;
+    }
+
+    .main__jobsGrid, .flips__grid {
+        grid-template-columns: 1fr;
     }
 }

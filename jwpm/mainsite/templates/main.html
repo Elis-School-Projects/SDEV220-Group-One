@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
     <div class="hero">
@@ -6,6 +7,41 @@
             <div class="hero__innerContainer">
                 <h1 class="hero__title">JW Property Management</h1>
                 <h2 class="hero__desc">A Central Indiana <br>Property Management Company</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="contentContainer">
+        <h1 class="main__tagline">Your <span class="orange">trusted</span> rental management partner.</h1>
+
+        <div class="main__jobsGrid">
+            <div class="jobsGrid__container">
+                <img src="{% static 'imgs/signature.jpg' %}" alt="Signature" class="jobsGrid__img">
+                <h3 class="jobsGrid__title">Manage Tenants</h3>
+                <p class="jobsGrid__subtitle">Advertising, New Lease Signings, Renewals, Evictions, Showings, Lead Based Paint Notification</p>
+            </div>
+            <div class="jobsGrid__container">
+                <img src="{% static 'imgs/windows.jpg' %}" alt="Windows" class="jobsGrid__img">
+                <h3 class="jobsGrid__title">Manage Properties</h3>
+                <p class="jobsGrid__subtitle">Inspections, Renter's Insurance Recovery, Replacement of Wear and Tear</p>
+            </div>
+            <div class="jobsGrid__container">
+                <img src="{% static 'imgs/pipes.jpg' %}" alt="Pipes" class="jobsGrid__img">
+                <h3 class="jobsGrid__title">Maintenance</h3>
+                <p class="jobsGrid__subtitle">Plumbing, Handyman, Landscaping, Gutter Clean Out</p>
+            </div>
+        </div>
+
+        <h1 class="flips__title">Unit <span class="blue">Flips</span></h1>
+
+        <div class="flips__grid">
+            <div class="flips__container">
+                <h2 class="flips__label">Before</h2>
+                <img src="{% static 'imgs/before.jpg' %}" alt="Before unit work" class="flips__img">
+            </div>
+            <div class="flips__container">
+                <h2 class="flips__label">After</h2>
+                <img src="{% static 'imgs/after.png' %}" alt="After unit work" class="flips__img">
             </div>
         </div>
     </div>
