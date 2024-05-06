@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - JW Property MGT</title>
+    <title>JW Property MGT</title>
 
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="shortcut icon" type="image/png" href="{% static 'imgs/logo.png' %}"/>
@@ -46,6 +46,17 @@
                 <li><a href="{% url 'available_units' %}" class="nav__link">&rarr; Available Units</a></li>
                 <li><a href="{% url 'rental_application' %}" class="nav__link">&rarr; Rental Application</a></li>
                 <li><a href="{% url 'contact_us' %}" class="nav__link">&rarr; Contact Us</a></li>
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'dashboard' %}" class="nav__link">&rarr; Dashboard</a></li>                  
+                    <li>
+                        <form action="{% url 'logout' %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="nav__logout">&rarr; Log out</button>
+                        </form>  
+                    </li>
+                {% else %}
+                    <li><a href="{% url 'login' %}" class="nav__link">&rarr; Login</a></li>
+                {% endif %}
             </ul>
         </div>
     </header>
