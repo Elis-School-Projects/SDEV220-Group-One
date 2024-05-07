@@ -11,6 +11,8 @@
         <h1>Applications </h1>
             {% for application in applications %}
                 <li>{{ application.name }} - {{ application.email }} (<a href="{% url 'delete_application' application.id %}">Delete</a>)</li>
+                <li>Applied for -{{ application.applyingFor }}</li>
+                <li></li>
             {% endfor %}
         </ul>
     
