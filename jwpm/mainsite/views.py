@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.utils import timezone
 
-from .models import Unit
+from .models import Unit, Application
 from .forms import ApplicationForm, UnitForm
 
 # Landing - Front End Page
@@ -40,5 +40,44 @@ def contact_us(request):
     return render(request, 'contact_us.html')
 
 @login_required
+# def dashboard(request):
+#     # Fetch all applications from the database
+#     applications = Application.objects.all()
+    
+#     # Pass the applications to the template
+#     return render(request, 'dashboard.html', {'applications': applications})
 def dashboard(request):
-    return render(request, 'dashboard.html')
+    applications = Application.objects.all()
+    units = Unit.objects.all()
+    return render(request, 'dashboard.html', {'applications': applications, 'units': units})
+
+@login_required
+def delete_application(request, application_id):
+    application = get_object_or_404(Application, pk=application_id)
+    if request.method == 'POST':
+        application.delete()
+        return redirect('dashboard')
+    return render(request, 'confirm_delete_application.html', {'application': application})
+
+@login_required
+def post_unit(request):
+    if request.method == 'POST':
+        form = UnitForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('dashboard')
+    else:
+        form = UnitForm()
+    return render(request, 'post_unit.html', {'form': form})
+    
+@login_required
+def edit_unit(request, unit_id):
+    unit = get_object_or_404(Unit, pk=unit_id)
+    if request.method == 'POST':
+        form = UnitForm(request.POST, instance=unit)
+        if form.is_valid():
+            form.save()
+            return redirect('dashboard')
+    else:
+        form = UnitForm(instance=unit)
+    return render(request, 'edit_unit.html', {'form': form, 'unit': unit})

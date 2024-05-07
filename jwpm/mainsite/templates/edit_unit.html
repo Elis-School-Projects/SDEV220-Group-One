@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="header__background"></div>
+    <div class="rentApp__Container">
+        <h1 class="subpage__title">Unit Form</h1>
+        {% if submit %}
+            <div class="rentApp__successContainer">
+                <h2 class="rentApp__success">Application was submitted successfully!</h2>
+                <a href="{% url 'main' %}" class="rentApp__toHome">Return to Home</a>
+            </div>
+        {% else %}
+            <form method="POST" class="rentApp__form">{% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="rentApp__submitBtn">Submit</button>
+            </form>
+        {% endif %}
+    </div>
+{% endblock %}

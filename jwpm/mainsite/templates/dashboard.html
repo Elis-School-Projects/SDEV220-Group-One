@@ -1,8 +1,28 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
     <div class="header__background"></div>
-    <div class="dashboard__Container">
-        <h1 class="subpage__title">Dashboard</h1>
+    <div class="dashboard__container">
+        <h1 class="dashboard__title">Dashboard</h1>
+
+        <!-- Display all applications -->
+      
+        <h1>Applications </h1>
+            {% for application in applications %}
+                <li>{{ application.name }} - {{ application.email }} (<a href="{% url 'delete_application' application.id %}">Delete</a>)</li>
+            {% endfor %}
+        </ul>
+    
+        <h2>Rental Units</h2>
+        <ul>
+            {% for unit in units %}
+                <li>{{ unit.address }} - {{ unit.status }}  <a href="{% url 'edit_unit' unit.id %}">Edit</a></li>
+                
+            {% endfor %}
+        </ul>
     </div>
+        <a href="{% url 'post_unit' %}">Post New Unit</a>
+
+    
 {% endblock %}
