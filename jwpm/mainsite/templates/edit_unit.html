@@ -6,11 +6,11 @@
         <h1 class="subpage__title">Edit Rental Unit</h1>
         {% if submit %}
             <div class="rentApp__successContainer">
-                <h2 class="rentApp__success">Rental was update successfully</h2>
+                <h2 class="rentApp__success">Rental was updated successfully</h2>
                 <a href="{% url 'main' %}" class="rentApp__toHome">Return to Home</a>
             </div>
         {% else %}
-            <form method="POST" class="rentApp__form">{% csrf_token %}
+            <form method="POST" class="rentApp__editForm">{% csrf_token %}
                 {{ form.as_p }}
                 <button type="submit" class="rentApp__submitBtn">Submit</button>
             </form>

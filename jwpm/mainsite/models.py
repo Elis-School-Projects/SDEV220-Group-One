@@ -6,7 +6,7 @@ class Unit(models.Model):
     STATUS_CHOICES = [
         ('available', 'Available'),
         ('rented', 'Rented'),
-        ('maintenance', 'Under Maintenance'),
+        ('pending', 'Pending'),
     ]
 
     creator = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)

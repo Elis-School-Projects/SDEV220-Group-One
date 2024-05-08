@@ -81,3 +81,11 @@ def edit_unit(request, unit_id):
     else:
         form = UnitForm(instance=unit)
     return render(request, 'edit_unit.html', {'form': form, 'unit': unit})
+
+@login_required
+def delete_unit(request, unit_id):
+    unit = get_object_or_404(Unit, pk=unit_id)
+    if request.method == 'POST':
+        unit.delete()
+        return redirect('dashboard')
+    return render(request, 'confirm_delete_unit.html', {'unit': unit})

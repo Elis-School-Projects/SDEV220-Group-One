@@ -4,14 +4,13 @@
 
 <div class="header__background"></div>
 <div class="delete__container">
-    <h1 class="subpage__title">Confirm Application Deletion</h1>
-    <p class="delete__subtext">Are you sure you want to delete "{{ application.name }}"?</p>
+    <h1 class="subpage__title">Confirm Unit Deletion</h1>
+    <p class="delete__subtext">Are you sure you want to delete "{{ unit.address }}"?</p>
     <form method="post">
         {% csrf_token %}
         <button type="submit" class="delete__button">Yes, delete</button>
     </form>
 </div>
-
 
 
 {% endblock %}
