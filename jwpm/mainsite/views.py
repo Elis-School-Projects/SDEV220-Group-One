@@ -39,6 +39,7 @@ def application_success(request):
 def contact_us(request):
     return render(request, 'contact_us.html')
 
+# Dashboard - Protected Page
 @login_required
 # def dashboard(request):
 #     # Fetch all applications from the database
@@ -51,6 +52,7 @@ def dashboard(request):
     units = Unit.objects.all()
     return render(request, 'dashboard.html', {'applications': applications, 'units': units})
 
+# Application Delete Route - Protected Route
 @login_required
 def delete_application(request, application_id):
     application = get_object_or_404(Application, pk=application_id)
@@ -59,6 +61,7 @@ def delete_application(request, application_id):
         return redirect('dashboard')
     return render(request, 'confirm_delete_application.html', {'application': application})
 
+# Create new Unit - Protected Page/Route
 @login_required
 def post_unit(request):
     if request.method == 'POST':
@@ -69,7 +72,8 @@ def post_unit(request):
     else:
         form = UnitForm()
     return render(request, 'post_unit.html', {'form': form})
-    
+
+# Edit existing unit - Protected Page/Route
 @login_required
 def edit_unit(request, unit_id):
     unit = get_object_or_404(Unit, pk=unit_id)
@@ -82,6 +86,7 @@ def edit_unit(request, unit_id):
         form = UnitForm(instance=unit)
     return render(request, 'edit_unit.html', {'form': form, 'unit': unit})
 
+# Delete a unit - Protected Route
 @login_required
 def delete_unit(request, unit_id):
     unit = get_object_or_404(Unit, pk=unit_id)

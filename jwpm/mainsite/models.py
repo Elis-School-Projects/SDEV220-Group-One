@@ -2,6 +2,7 @@ from django.db import models
 from django.utils import timezone
 from django.conf import settings
 
+# Unit Model used to display available rental units to the public
 class Unit(models.Model):
     STATUS_CHOICES = [
         ('available', 'Available'),
@@ -25,7 +26,8 @@ class Unit(models.Model):
     def remove(self):
         self.published_date = None
         self.save()
-    
+
+# Application model used to source possible tenants for available units
 class Application(models.Model):
     name = models.CharField(max_length=200)
     email = models.CharField(max_length=200)

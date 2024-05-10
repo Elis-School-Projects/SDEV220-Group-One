@@ -11,10 +11,10 @@ urlpatterns = [
     path('rental_application/success/', views.application_success, name='application_success'),
     path('contact_us/', views.contact_us, name='contact_us'),
     
+    # Protected Admin Routes
+    path('dashboard/', views.dashboard, name='dashboard'),
     path('delete_application/<int:application_id>/', views.delete_application, name='delete_application'),
     path('post_unit/', views.post_unit, name='post_unit'),
     path('edit_unit/<int:unit_id>/', views.edit_unit, name='edit_unit'),
     path('delete_unit/<int:unit_id>/', views.delete_unit, name='delete_unit'),
-    # Protected Admin Dashboard
-    path('dashboard/', views.dashboard, name='dashboard'),
 ]
